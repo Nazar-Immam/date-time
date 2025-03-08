@@ -16,7 +16,13 @@ function updateclock(){
 
     timeElement.textContent = `${hours}:${mins}:${second}:${ampm}` ;
 
-    dateElement.textContent =  now.toDateString() ;
+    const options = {
+        weekday: 'long' ,
+        month: 'long' ,
+        year: 'numeric',
+        day: 'numeric'
+    }
+    dateElement.textContent =  now.toLocaleDateString(undefined,options)
 
 }
 updateclock()
