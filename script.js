@@ -12,7 +12,7 @@ function updateclock(){
     const mins = now.getMinutes().toString().padStart(2,"0") ; // this assures the string has atleast 2 value if not then it will fill it with "0"
     const seconds = now.getSeconds()
     const second = seconds<10 ? `0${seconds}`: `${seconds}`;
-    const ampm = hours < 12 ? "AM" : "PM" ;
+    const ampm = now.getHours() < 12 ? "AM" : "PM" ;
 
     timeElement.textContent = `${hours}:${mins}:${second}:${ampm}` ;
 
